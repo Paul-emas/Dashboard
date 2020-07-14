@@ -1,0 +1,360 @@
+.section {
+
+    &-modals {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 20;
+
+
+        & #invalid {
+            text-align: center;
+            color: $color-primary;
+            font-weight: 600;
+            margin-top: -1rem;
+            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            visibility: visible;
+            opacity: 0;
+        }
+
+        & .dash__tabs--btn {
+            position: relative !important;
+            @include absCenter;
+        }
+
+        &--imgs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 1rem;
+
+            @include respond(tab-land) {
+                display: none;
+            }
+
+            & .text {
+                font-size: 1.3rem;
+                color: $color-primary;
+                font-weight: 600;
+                text-align: center;
+
+                @include respond(phone) {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+
+        & #overlay {
+            pointer-events: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            background-color: rgba(#000, .7);
+            z-index: 24;
+
+            &::before {
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-image: url('../img/order-imgs/food-2.jpg');
+                background-size: 250%;
+                transform: scale(1.8);
+                content: ' ';
+                filter: blur(50px);
+            }
+        }
+
+        &--heading {
+            text-align: center;
+            font-size: 1.7rem;
+            margin-bottom: 3rem;
+
+            @include respond(phone) {
+                margin-bottom: 2rem;
+                font-size: 2rem;
+                margin-top: 1rem;
+            }
+        }
+
+        &-box {
+            position: absolute;
+            z-index: 25;
+            padding: 4rem;
+            padding-bottom: 5rem;
+            border-radius: 1rem;
+            background-color: $color-white;
+            transform: scale(.1);
+            transition: all .3s;
+            top: 2rem;
+            opacity: 0;
+            visibility: hidden;
+            overflow-y: visible;
+
+
+            &-1 {
+                text-align: center;
+
+                & .title {
+                    font-weight: 400;
+
+                    @include respond(tab-land) {
+                        font-size: 1.7rem;
+                    }
+                }
+
+                & .caption {
+                    font-weight: 500;
+                    color: $color-grey-dark;
+
+                    @include respond(tab-land) {
+                        font-size: 1.3rem;
+                    }
+                }
+                
+                & svg {
+                    width: 12rem;
+                    height: 12rem;
+                    transform: scale(0);
+                    transition: all .3s;
+                    transition-delay: .5s;
+                    margin-bottom: 2rem;
+
+                    @include respond(tab-land) {
+                        width: 10rem;
+                        height: 10rem;
+                    }
+                }
+            }
+
+            @include respond(phone) {
+                top: 1.2rem;
+            }
+
+            & img {
+                width: 6rem;
+                height: 5rem;
+                border-radius: .8rem;
+                cursor: pointer;
+                transition: all .3s;
+                margin-bottom: 0.5rem;
+                box-shadow: 0 .5rem 1rem $color-grey-dark;
+
+                @include respond(phone) {
+                    width: 4rem;
+                    height: 4rem;
+                }
+
+                &:active {
+                    transform: scale(.8);
+                }
+            }
+
+            @include absCenter;
+
+            &--content {
+                display: flex;
+            }
+
+            &--heading {
+                font-size: 1.5rem;
+                padding: .5rem .5rem;
+                font-weight: 400;
+
+                @include respond(phone) {
+                    font-size: 1.2rem;
+                }
+
+                & span {
+                    position: relative;
+                    top: 1rem;
+                    font-size: 1.2rem;
+                    color: #888888;
+                    font-weight: 600;
+
+                    & i {
+                        color: $color-primary;
+                        margin-right: 1rem;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+
+            & ul {
+                overflow-y: visible;
+
+                & li {
+                    list-style-type: none;
+                    padding: 1rem 2rem;
+                    border-radius: 1rem;
+
+                    &:hover {
+                        background-color: #e6e4e4;
+                        cursor: pointer;
+                    }
+
+                    &:hover img {
+                        transform: scale(.89);
+                    }
+
+                    &:not(:last-child) {
+                        border-bottom: 1px solid $color-grey-light;
+                    }
+
+                    & img {
+                        width: 7rem;
+                        height: 7rem;
+                        border-radius: 50%;
+                        margin-right: 1rem;
+                        transition: all .3s;
+                        border: 5px solid #3e80fc;
+                    }
+                }
+            }
+
+            & .close {
+                width: 3rem;
+                height: 3rem;
+                text-align: center;
+                line-height: 3rem;
+                cursor: pointer;
+                color: $color-white;
+                border-radius: .5rem;
+                float: right;
+                right: 3rem;
+                top: 3rem;
+                position: fixed;
+                background-color: #888888;
+
+                @include respond(phone) {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    line-height: 2.5rem;
+                }
+            }
+
+            @include respond(phone) {
+                padding: 2rem;
+            }
+
+            &-food {
+                width: 60rem;
+
+
+                @include respond(phone) {
+                    width: 90%;
+                }
+            }
+        }
+
+        & .form {
+
+            &__box {
+                display: grid;
+
+                &:not(:last-child) {
+                    margin-bottom: 2rem;
+
+                    @include respond(phone) {
+                        margin-bottom: 1.5rem;
+                    }
+                }
+
+                & label {
+                    font-size: 1.3rem;
+                    color: rgb(252, 160, 22);
+                    font-weight: 600;
+                    text-transform: uppercase;
+
+                    & span {
+                        color: #888;
+                    }
+                }
+            }
+
+            &__input {
+                font-size: 1.5rem;
+                padding: 1.3rem 0;
+                outline: none;
+                width: 100%;
+                padding-left: 2rem;
+                border: none;
+                color: #888;
+
+                &__btn {
+                    padding: 1.1rem 0;
+                    text-align: center;
+                    font-size: 1.3rem;
+                    background-image: linear-gradient(200deg, #3e80fc, #8cb1f7);
+                    color: $color-white;
+                    border-radius: 1rem;
+                    border: none;
+                    outline: none;
+                }
+
+                &:placeholder-shown {
+                    color: #000;
+                }
+
+                &-box {
+                    border-radius: .5rem;
+                    border: 1px solid #c5c3c3;
+                    position: relative;
+                    overflow: hidden;
+
+                    & i {
+                        position: absolute;
+                        background-color: cornflowerblue;
+                        float: right;
+                        right: 0;
+                        width: 6rem;
+                        height: 100%;
+                        font-size: 1.7rem;
+                        text-align: center;
+                        line-height: 5rem;
+                        color: $color-white;
+                    }
+
+                    &-1 {
+
+                        & i {
+                            font-size: 3rem;
+                        }
+                    }
+
+                    & select {
+                        height: 5rem;
+                        width: 91%;
+                        padding-left: 2rem;
+                        background-color: #fff;
+                        font-size: 1.5rem;
+                        box-shadow: none;
+                        border: none;
+                        outline: none;
+                        color: #888;
+
+                        & option {
+                            outline: none !important;
+                            padding: 1.4rem 0;
+                            font-size: 1.4rem;
+                        }
+                    }
+                }
+
+                &-1 {
+                    padding-bottom: 2rem;
+
+                    @include respond(phone) {
+                        padding-bottom: .8rem;
+                    }
+                }
+            }
+        }
+    }
+}

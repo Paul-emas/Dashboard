@@ -1,0 +1,191 @@
+.start {
+    position: relative;
+    top: 10rem;
+
+    @include respond(tab-land) {
+        top: 8rem;
+    }
+}
+
+.sidenav {
+    position: fixed;
+    width: 15rem;
+    height: 80%;
+    margin-left: 3rem;
+    background-color: $color-white;
+    box-shadow: 0 0 2rem $color-grey-light-1;
+    text-align: center;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: all .5s;
+    transition-delay: .2s;
+    z-index: 8;
+
+    @include respond(tab-land) {
+        box-shadow: 0 0 .5rem $color-grey-darker;
+        border-radius: 1rem;
+        left: -100%;
+        width: 31rem !important;
+        margin-left: 0;
+        text-align: left;
+        transition: all .3s;
+        transition-delay: none;
+        overflow-y: visible;
+    }
+
+    &__profile {
+        display: none;
+        width: 100%;
+        text-align: center;
+        padding: 2rem 0;
+        background-image: linear-gradient(to left, #ff8851, #fb8181);
+        padding-bottom: .5rem;
+
+
+        @include respond(tab-land) {
+            display: block;
+        }
+
+        &--imgbox {
+            width: 8rem;
+            margin: 0 auto;
+            margin-bottom: 1rem;
+            border-radius: 50%;
+            position: relative;
+
+            & span {
+                width: 1.2rem;
+                height: 1.2rem;
+                border-radius: 50%;
+                background-color: $color-secondary;
+                position: absolute;
+                left: .5rem;
+                top: .5rem;
+            }
+        }
+
+        &--img {
+            height: 8rem;
+        }
+
+        &--name {
+            color: $color-white;
+            font-size: 1.7rem;
+            text-transform: capitalize;
+        }
+
+        &--caption {
+            color: $color-white;
+            font-size: 1rem;
+            margin-top: -.5rem;
+            text-transform: uppercase;
+
+            & span {
+                font-weight: 500;
+                color: #2d2d2d;
+            }
+        }
+    }
+
+    & ul {
+        position: relative;
+
+        & .active {
+            @include respond(tab-land) {
+                background-color: rgba(119, 119, 119, 0.1);
+            }
+
+            & img {
+                filter: grayscale(0);
+                transform: scale(1.05);
+            }
+
+            & .sidenav__img--name {
+                font-weight: 500;
+                color: #6495ed;
+            }
+        }
+
+        & li {
+            list-style: none;
+            cursor: pointer;
+            position: relative;
+            padding-top: 2rem;
+            transition: all .2s;
+
+            @include respond(tab-land) {
+                display: flex;
+                padding-left: 2rem;
+                padding-bottom: 1rem;
+            }
+
+            &:not(:last-child) {
+                border-bottom: 1px solid $color-grey-light-1;
+
+                @include respond(phone) {
+                    border: none;
+                }
+            }
+
+            &:last-child {
+                padding-bottom: 1rem;
+            }
+        }
+    }
+
+    &__img {
+        height: 5rem;
+        margin-bottom: 0.8rem;
+        transform: scale(.85);
+        filter: grayscale(100%);
+        transition: all .3s ease;
+
+        @include respond(tab-land) {
+            height: 3rem;
+        }
+
+        &--name {
+            font-size: 1.2rem;
+            transition: all .3s ease;
+            height: 1.5rem;
+            overflow: hidden;
+
+            @include respond(tab-land) {
+                font-size: 1.5rem;
+                height: 2rem;
+                margin-left: 1rem;
+                margin-top: .5rem;
+            }
+        }
+    }
+
+    &__toggle-box {
+        position: absolute;
+        border-radius: 50%;
+        right: .2rem;
+        top: 1rem;
+        width: 3rem;
+        height: 3rem;
+        padding: .8rem;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 5;
+        transition: all .3s;
+
+        @include respond(tab-land) {
+            display: none;
+        }
+
+        &:active {
+            transform: scale(.85);
+        }
+
+        & i {
+            position: absolute;
+            color: $color-primary;
+            font-size: 1.5rem;
+            top: .3rem;
+        }
+    }
+}

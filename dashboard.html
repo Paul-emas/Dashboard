@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="assets/img/logo-2.png" type="image/x-icon">
+    <!-- Link to external script -->
+    <link rel="stylesheet" href="assets/sass/main.css">
+    <!-- Link to boostrap styling file-->
+    <link rel="stylesheet" href="assets/sass/vendours/boostrap/css/bootstrap.css">
+    <!-- Fontawesome icons -->
+    <link rel="stylesheet" href="assets/fonts/css/all.css">
+    <title>ChefRunTown.com</title>
+</head>
+
+<body>
+
+
+    <!-- Start of ChefRunTown User Dashboard -->
+    <header class="dashboard">
+        <nav class="dashboard__nav">
+            <div class="row">
+                <div class="dashboard__logo fl" onclick="UIController.openTab(event, 'tab-0')">
+                    <a href="#">
+                        <img src="assets/img/logo-2.png" alt="logo-img" class="dashboard__logo--img" />
+                    </a>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="dashboard__search--box fl">
+                        <i class="fl fal fa-search dashboard__search--icon"></i>
+                        <form action="#" method="get">
+                            <input type="text" placeholder="Transcations, e-wallet, account ....."
+                                class="dashboard__search--input fl" />
+                        </form>
+                    </div>
+                    <a href="#" data-ripple class="btn btn-prim dashboard__btn fr addFood"><i
+                            class="fad fa-hat-chef"></i> Add food</a>
+                </div>
+                <div class="col-lg-5">
+                    <div class="dashboard__profile">
+                        <div class="dashboard__profile--bell-box mad-button-raised mad-ico-right bg-accented notiFY"
+                            data-ripple="rgba(0,0,0, 0.1)" data-toggle="tooltip" data-placement="bottom"
+                            title="Notifications">
+                            <span>0</span>
+                            <i class="fad fa-bell dashboard__profile--bell"></i>
+                            <div class="dash__notify">
+
+                            </div>
+                        </div>
+                        <div class="dashboard__profile--details" data-ripple>
+                            <div class="dashboard__profile--details-imgbox fl">
+                                <span></span>
+                                <img src="assets/img/user.png" alt="profile-img"
+                                    class="dashboard__profile--details-img" />
+                            </div>
+                            <div class="dashboard__profile--details-info fl">
+                                <p class="dashboard__profile--details-caption">Paul Emas</p>
+                                <p class="dashboard__profile--details-position">Chef</p>
+                            </div>
+                            <i class="fal fa-angle-down"></i>
+                        </div>
+                        <i class="fad fa-bars toggle-rightbar toggle-rightbar-1 fr"></i>
+                        <i class="fad toggle-rightbar fa-utensils-alt fr" data-toggle="tooltip" data-placement="bottom"
+                            title="Orders"></i>
+                    </div>
+                </div>
+            </div>
+
+
+        </nav>
+
+    </header>
+
+    <section class="section-modals">
+        <div id="overlay"></div>
+        <div class="section-modals-box section-modals-box-food">
+            <i data-ripple class="fal fa-times close closeModal"></i>
+            <h2 class="section-modals--heading">Create Food</h2>
+            <form action="#" method="get" class="form">
+                <div class="form__box">
+                    <label for="name">Name of Meal</label>
+                    <div class="form__input-box">
+                        <input type="text" placeholder="Food name" class="form__input" id="name" />
+                        <i class="fad fa-edit"></i>
+                    </div>
+                </div>
+
+                <div class="form__box">
+                    <label for="name">Country</label>
+                    <div class="form__input-box form__input-box-1">
+                        <i class="fal fa-angle-down"></i>
+                        <select id="Category">
+                            <option value="#">Africa</option>
+                            <option value="#">United States of America</option>
+                            <option value="#">Australia</option>
+                            <option value="#">Canada</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form__box">
+                    <label for="name">Input price <span>$(10 - 1000)</span></label>
+                    <div class="slidecontainer">
+                        <input type="range" min="10" max="1000" value="0" class="slider" id="myRange">
+                      </div>
+                    <div class="form__input-box">
+                        <input type="number" value="0" class="form__input" id="demo" />
+                        <i class="fad fa-dollar-sign"></i>
+                    </div>
+                </div>
+
+                <div class="form__box">
+                    <label for="name">Food Category</label>
+                    <div class="form__input-box form__input-box-1">
+                        <i class="fal fa-angle-down"></i>
+                        <select id="Category">
+                            <option value="#">Cereals</option>
+                            <option value="#">Porridge</option>
+                            <option value="#">Snacks</option>
+                            <option value="#">Sea Foods</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form__box" data-ripple>
+                    <input type="submit" value="Save" class="form__input__btn">
+                </div>
+            </form>
+        </div>
+
+        <div class="section-modals-box section-modals-box-food">
+            <i data-ripple class="fal fa-times close closeModal"></i>
+            <h2 class="section-modals--heading">Notifications</h2>
+            <ul>
+                <li data-ripple>
+                    <div class="section-modals-box--content">
+                        <img src="assets/img/user.png" alt="notification-bg" />
+                        <h2 class="section-modals-box--heading">Lorem ipsum dolor sit, amet consectetur adipisicing elit
+                            <br> <span><i class="fal fa-bell"></i> 20:15AM</span></h2>
+                    </div>
+                </li>
+                <li data-ripple>
+                    <div class="section-modals-box--content">
+                        <img src="assets/img/user.png" alt="notification-bg" />
+                        <h2 class="section-modals-box--heading">Lorem ipsum dolor sit, amet consectetur adipisicing elit
+                            <br> <span><i class="fal fa-bell"></i> 20:15AM</span></h2>
+                    </div>
+                </li>
+                <li data-ripple>
+                    <div class="section-modals-box--content">
+                        <img src="assets/img/user.png" alt="notification-bg" />
+                        <h2 class="section-modals-box--heading">Lorem ipsum dolor sit, amet consectetur adipisicing elit
+                            <br> <span><i class="fal fa-bell"></i> 20:15AM</span></h2>
+                    </div>
+                </li>
+                <li data-ripple>
+                    <div class="section-modals-box--content">
+                        <img src="assets/img/user.png" alt="notification-bg" />
+                        <h2 class="section-modals-box--heading">Lorem ipsum dolor sit, amet consectetur adipisicing elit
+                            <br> <span><i class="fal fa-bell"></i> 20:15AM</span></h2>
+                    </div>
+                </li>
+                <li data-ripple>
+                    <div class="section-modals-box--content">
+                        <img src="assets/img/user.png" alt="notification-bg" />
+                        <h2 class="section-modals-box--heading">Lorem ipsum dolor sit, amet consectetur adipisicing elit
+                            <br> <span><i class="fal fa-bell"></i> 20:15AM</span></h2>
+                    </div>
+                </li>
+                <li data-ripple>
+                    <div class="section-modals-box--content">
+                        <img src="assets/img/user.png" alt="notification-bg" />
+                        <h2 class="section-modals-box--heading">Lorem ipsum dolor sit, amet consectetur adipisicing elit
+                            <br> <span><i class="fal fa-bell"></i> 20:15AM</span></h2>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section-modals-box section-modals-box-1 section-modals-box-food">
+            <i data-ripple class="fal fa-times close closeModal"></i>
+            <svg class="svgs" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10"
+                    cx="65.1" cy="65.1" r="62.1" />
+                <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round"
+                    stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
+            </svg>
+            <h1 class="title">Order Accepted</h1>
+            <p class="caption">Your order has been accepted</p>
+            <button data-ripple class="btn btn-prim closeModal"><i class="fal fa-times"></i> close</button>
+        </div>
+
+
+        <div class="section-modals-box section-modals-box-food">
+            <i data-ripple class="fal fa-times close closeModal"></i>
+            <h2 class="section-modals--heading">Enter time of delivery</h2>
+            <h4 id="invalid">Please fill in the forms to proceed</h4>
+            <form action="#" method="get" class="form">
+                <div class="form__box">
+                    <label for="name">Time taken for delivery <span>(30MINS - 3HRS)</span></label>
+                    <div class="slidecontainer">
+                        <input type="range" min="10" max="180" value="0" class="slider formInput" id="myRange2">
+                      </div>
+                    <div class="form__input-box">
+                        <input type="number" value="0" class="form__input formInput" id="demo2" />
+                        <i class="fad fa-stopwatch"></i>
+                    </div>
+                </div>
+
+                <div class="form__box">
+                    <label for="name">Date of Delivery</label>
+                    <div class="form__input-box">
+                        <input type="date" placeholder="Now" class="form__input formInput" id="name" />
+                        <i class="fad fa-clock"></i>
+                    </div>
+                </div>
+
+                <div class="form__box" data-ripple>
+                    <input type="submit" value="Submit" class="form__input__btn" id="submitBtn">
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <main class="start">
+        <div class="sidenav">
+            <div class="sidenav__profile">
+                <div class="sidenav__profile--imgbox">
+                    <span></span>
+                    <img src="assets/img/user.png" alt="profile-img" class="sidenav__profile--img">
+                </div>
+                <p class="sidenav__profile--name"><i class="fad fa-utensils-alt"></i> Paul Emas</p>
+                <p class="sidenav__profile--caption"><span>Position:</span> Chef</p>
+            </div>
+            <div class="sidenav__toggle-box fr">
+                <i class="fa fa-bars"></i>
+            </div>
+            <ul class="dashboard-box">
+                <li data-ripple="rgba(0, 0, 0, .2)" class="dash-icons active" id="defaultOpen"
+                    onclick="UIController.openTab(event, 'tab-0')">
+                    <img src="https://img.icons8.com/color/96/000000/dashboard--v1.png" alt="sidenav-icons"
+                        class="sidenav__img" />
+                    <p class="sidenav__img--name">Dashboard</p>
+                </li>
+                <li data-ripple="rgba(0, 0, 0, .2)" class="dash-icons" onclick="UIController.openTab(event, 'tab-1')">
+                    <img src="https://img.icons8.com/cotton/96/000000/cheeseburger.png" alt="sidenav-icons"
+                        class="sidenav__img" />
+                    <p class="sidenav__img--name">Dishes</p>
+                </li>
+                <li data-ripple="rgba(0, 0, 0, .2)" class="dash-icons" onclick="UIController.openTab(event, 'tab-2')">
+                    <img src="https://img.icons8.com/color/96/000000/wallet.png" alt="sidenav-icons"
+                        class="sidenav__img" />
+                    <p class="sidenav__img--name">My Account</p>
+                </li>
+                <li data-ripple="rgba(0, 0, 0, .2)" class="dash-icons" onclick="UIController.openTab(event, 'tab-3')">
+                    <img src="https://img.icons8.com/color/96/000000/edit-user-male--v1.png" alt="sidenav-icons"
+                        class="sidenav__img" />
+                    <p class="sidenav__img--name">My Profile</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="dash__tabs--container">
+            <div id="tab-0" class="dash__tabs tabcontent fl">
+                <div class="dash__content">
+                    <h1 class="dash__tabs--headings">Summary</h1>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="dash__tabs--boxs" data-ripple onclick="UIController.openTab(event, 'tab-2')">
+                                <h3 class="dash__tabs--boxs-heading">Earnings</h3>
+                                <p class="dash__tabs--boxs-amount">$ 5,350,000.00</p>
+                                <p class="dash__tabs--boxs-percentage">$ 5,350,000.00 <i class="fal fa-arrow-up"></i>
+                                </p>
+                                <i class="fad fa-user dash__tabs--boxs-icons dash__tabs--boxs-icons-1"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <a href="#transcation1">
+                                <div class="dash__tabs--boxs dash__tabs--boxs-1" data-ripple>
+                                    <h3 class="dash__tabs--boxs-heading">Invoices pending</h3>
+                                    <p class="dash__tabs--boxs-amount">$ 5,350,000.00</p>
+                                    <p class="dash__tabs--boxs-percentage">$ 5,350,000.00 <i
+                                            class="fal fa-arrow-up"></i>
+                                    </p>
+                                    <i class="fad fa-inbox dash__tabs--boxs-icons dash__tabs--boxs-icons-1"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="dash__tabs--boxs dash__tabs--boxs-2 notiFY" data-ripple>
+                                <h3 class="dash__tabs--boxs-heading">Inbox</h3>
+                                <p class="dash__tabs--boxs-amount">6 Notifications</p>
+                                <p class="dash__tabs--boxs-percentage">5 Read</p>
+                                <i class="fad fa-envelope dash__tabs--boxs-icons dash__tabs--boxs-icons-2"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="dash__tabs--boxs dash__tabs--boxs-3" data-ripple
+                                onclick="UIController.foodTab()">
+                                <h3 class="dash__tabs--boxs-heading">My orders</h3>
+                                <p class="dash__tabs--boxs-amount">3 Orders</p>
+                                <p class="dash__tabs--boxs-percentage">5 Delivered</p>
+                                <i class="fad fa-utensils dash__tabs--boxs-icons dash__tabs--boxs-icons-2"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <canvas id="myChart"></canvas>
+
+                    <div class="table-responsive" id="transcation1">
+                        <h1 class="dash__tabs--headings">Recent Transcations</h1>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Price <b>$</b></th>
+                                    <th>Transcations</th>
+                                    <th>Email Address</th>
+                                    <th>Date of Order</th>
+                                    <th>Date of Delivery</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>0</td>
+                                    <td>John</td>
+                                    <td>$300</td>
+                                    <td>Pending...</td>
+                                    <td>john@example.com</td>
+                                    <td>10/05/2020</td>
+                                    <td>12/05/2020</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Mary</td>
+                                    <td>$200</td>
+                                    <td>Completed</td>
+                                    <td>mary@example.com</td>
+                                    <td>10/05/2020</td>
+                                    <td>12/05/2020</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>James Anderson</td>
+                                    <td>$300</td>
+                                    <td>Completed</td>
+                                    <td>Anderson@example.com</td>
+                                    <td>10/05/2020</td>
+                                    <td>12/05/2020</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>John</td>
+                                    <td>$150</td>
+                                    <td>Pending...</td>
+                                    <td>john@example.com</td>
+                                    <td>10/05/2020</td>
+                                    <td>12/05/2020</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Mary</td>
+                                    <td>$100</td>
+                                    <td>Completed</td>
+                                    <td>mary@example.com</td>
+                                    <td>10/05/2020</td>
+                                    <td>12/05/2020</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>James Anderson</td>
+                                    <td>$300</td>
+                                    <td>Completed</td>
+                                    <td>Anderson@example.com</td>
+                                    <td>10/05/2020</td>
+                                    <td>12/05/2020</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Price <b>$</b></th>
+                                    <th>Transcations</th>
+                                    <th>Email Address</th>
+                                    <th>Date of Order</th>
+                                    <th>Date of Delivery</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+
+                    <div class="dash">
+                    <h1 class="dash__tabs--headings">Overview</h1>
+                        <div class="row charts">
+                            <div class="col-lg-4">
+                                <h2 class="charts--title"><i class="fad fa-chart-pie"></i> Customers Rating</h2>
+                                <canvas id="myChart2" width="1000" height="700"></canvas>
+                            </div>
+                            <div class="col-lg-4">
+                                <h2 class="charts--title"><i class="fad fa-chart-bar"></i> Product Reviews</h2>
+                                <canvas id="myChart3" width="1000" height="700"></canvas>
+                            </div>
+                            <div class="col-lg-4">
+                                <h2 class="charts--title"><i class="fad fa-chart-pie"></i> ChefRunTown ratings</h2>
+                                <canvas id="myChart4" width="1000" height="700"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dash__tabs tabcontent fl" id="tab-1">
+                <div class="dash__content">
+                    <div class="dash__tabs--food-btn">
+                        <button class="dash__tabs--food-addBtn addFood" data-ripple>
+                            <i class="fal fa-plus"></i>
+                            <b class="dash__tabs--food-caption">Add Food</b>
+                        </button>
+                    </div>
+
+                    <div class="dash__tabs--food" id="orders">
+                        <h1 class="dash__tabs--headings">Your Orders</h1>
+
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="dash__tabs-dish--counter">
+                                    <span>5</span>
+                                </div>
+                                <div class="dash__tabs--food-img dash__tabs--food-img-1"></div>
+                                <div class="dash__tabs--food-content">
+                                    <h2 class="dash__tabs--food-heading"><i class="fad fa-fish-cooked"></i> <br> Crabs
+                                        and
+                                        Prawns</h2>
+                                    <h4 class="dash__tabs--food-user">By: <span>James Anderson</span></h4>
+                                    <h4 class="dash__tabs--food-delivery">Delivery Date: <span>19th May 2020</span></h4>
+
+                                    <p class="dash__tabs--food-des dash__tabs--food-des-1"><span>Message:</span> Please
+                                        i would like to get the orders on time.
+                                        Thanks</p>
+                                    <div class="dash__tabs--food-btnBox">
+                                        <button class="accept acceptBtn" data-ripple><i class="fal fa-check"></i>
+                                            Accept</button>
+                                        <button class="decline" data-ripple><i class="fal fa-times"></i>
+                                            Decline</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="dash__tabs-dish--counter">
+                                    <span>2</span>
+                                </div>
+                                <div class="dash__tabs--food-img dash__tabs--food-img-2"></div>
+                                <div class="dash__tabs--food-content">
+                                    <h2 class="dash__tabs--food-heading"><i class="fad fa-pizza"></i> <br> Pizza
+                                        Margherita</h2>
+                                    <h4 class="dash__tabs--food-user">By: <span>James Anderson</span></h4>
+                                    <h4 class="dash__tabs--food-delivery">Delivery Date: <span>19th May 2020</span></h4>
+
+                                    <p class="dash__tabs--food-des dash__tabs--food-des-1"><span>Message:</span> Please
+                                        i would like to get the orders on time.
+                                        Thanks</p>
+                                    <div class="dash__tabs--food-btnBox">
+                                        <button class="accept acceptBtn" data-ripple><i class="fal fa-check"></i>
+                                            Accept</button>
+                                        <button class="decline" data-ripple><i class="fal fa-times"></i>
+                                            Decline</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="dash__tabs-dish--counter">
+                                    <span>10</span>
+                                </div>
+                                <div class="dash__tabs--food-img dash__tabs--food-img-3"></div>
+                                <div class="dash__tabs--food-content">
+                                    <h2 class="dash__tabs--food-heading"><i class="fad fa-burger-soda"></i> <br> Burger
+                                        and Chips</h2>
+                                    <h4 class="dash__tabs--food-user">By: <span>James Anderson</span></h4>
+                                    <h4 class="dash__tabs--food-delivery">Delivery Date: <span>19th May 2020</span></h4>
+
+                                    <p class="dash__tabs--food-des dash__tabs--food-des-1"><span>Message:</span> Please
+                                        i would like to get the orders on time.
+                                        Thanks</p>
+                                    <div class="dash__tabs--food-btnBox">
+                                        <button class="accept acceptBtn" data-ripple><i class="fal fa-check"></i>
+                                            Accept</button>
+                                        <button class="decline" data-ripple><i class="fal fa-times"></i>
+                                            Decline</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dash__tabs--dishes">
+                        <h2 class="dash__tabs--dishes-heading">Completed Orders</h2>
+                        <ul>
+                            <li>Chicken and chips <button data-ripple class="btn btn-prim dash__tabs--dishes-button"
+                                    onclick="UIController.openTab(event, 'tab-2')"><i class="fal fa-eye"></i>
+                                    View</button></li>
+                            <li>Roasted turkey and sauce <button data-ripple
+                                    class="btn btn-prim dash__tabs--dishes-button"
+                                    onclick="UIController.openTab(event, 'tab-2')"><i class="fal fa-eye"></i>
+                                    View</button>
+                            </li>
+                            <li>Burger and Coca-cola <button data-ripple class="btn btn-prim dash__tabs--dishes-button"
+                                    onclick="UIController.openTab(event, 'tab-2')"><i class="fal fa-eye"></i>
+                                    View</button></li>
+                            <li>Fried beef and rice <button data-ripple class="btn btn-prim dash__tabs--dishes-button"
+                                    onclick="UIController.openTab(event, 'tab-2')"><i class="fal fa-eye"></i>
+                                    View</button></li>
+                            <li>Pizza <button data-ripple class="btn btn-prim dash__tabs--dishes-button"
+                                    onclick="UIController.openTab(event, 'tab-2')"><i class="fal fa-eye"></i>
+                                    View</button>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="dash__tabs--food">
+                        <h1 class="dash__tabs--headings">Your Dishes</h1>
+
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="dash__tabs--food-img dash__tabs--food-img-1"></div>
+                                <div class="dash__tabs--food-content">
+                                    <h2 class="dash__tabs--food-heading"><i class="fad fa-fish-cooked"></i> <br> Crabs
+                                        and
+                                        Prawns</h2>
+                                    <h4 class="dash__tabs--food-status"><span>Categories:</span> Sea Foods</h4>
+                                    <p class="dash__tabs--food-des"><span>Crabs & Prawns</span> dolor sit amet
+                                        consectetur adipisicing elit. Dolorum, beatae nobis inventore assumenda
+                                        adipisicing elit. Dolorum, beatae nobis inventore</p>
+                                    <div class="dash__tabs--food-btnBox">
+                                        <button data-ripple><i class="fal fa-edit"></i> Edit</button>
+                                        <button data-ripple><i class="fal fa-trash"></i> Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="dash__tabs--food-img dash__tabs--food-img-2"></div>
+                                <div class="dash__tabs--food-content">
+                                    <h2 class="dash__tabs--food-heading"><i class="fad fa-pizza"></i> <br> Pizza
+                                        Margherita</h2>
+                                    <h4 class="dash__tabs--food-status"><span>Categories:</span> Pizza</h4>
+                                    <p class="dash__tabs--food-des"><span>Crabs & Prawns</span> dolor sit amet
+                                        consectetur adipisicing elit. Dolorum, beatae nobis inventore assumenda
+                                        adipisicing elit. Dolorum, beatae nobis inventore</p>
+                                    <div class="dash__tabs--food-btnBox">
+                                        <button data-ripple><i class="fal fa-edit"></i> Edit</button>
+                                        <button data-ripple><i class="fal fa-trash"></i> Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="dash__tabs--food-img dash__tabs--food-img-3"></div>
+                                <div class="dash__tabs--food-content">
+                                    <h2 class="dash__tabs--food-heading"><i class="fad fa-burger-soda"></i> <br> Burger
+                                        and Chips</h2>
+                                    <h4 class="dash__tabs--food-status"><span>Categories:</span> Snacks</h4>
+                                    <p class="dash__tabs--food-des"><span>Crabs & Prawns</span> dolor sit amet
+                                        consectetur adipisicing elit. Dolorum, beatae nobis inventore assumenda
+                                        adipisicing elit. Dolorum, beatae nobis inventore</p>
+                                    <div class="dash__tabs--food-btnBox">
+                                        <button data-ripple><i class="fal fa-edit"></i> Edit</button>
+                                        <button data-ripple><i class="fal fa-trash"></i> Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="dash__tabs--food-img dash__tabs--food-img-4"></div>
+                                <div class="dash__tabs--food-content">
+                                    <h2 class="dash__tabs--food-heading"><i class="fad fa-burrito"></i> <br> Strawberry
+                                        Pie</h2>
+                                    <h4 class="dash__tabs--food-status"><span>Categories:</span> Sea Foods</h4>
+                                    <p class="dash__tabs--food-des"><span>Crabs & Prawns</span> dolor sit amet
+                                        consectetur adipisicing elit. Dolorum, beatae nobis inventore assumenda
+                                        adipisicing elit. Dolorum, beatae nobis inventore</p>
+                                    <div class="dash__tabs--food-btnBox">
+                                        <button data-ripple><i class="fal fa-edit"></i> Edit</button>
+                                        <button data-ripple><i class="fal fa-trash"></i> Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="dash__tabs--food-img dash__tabs--food-img-5"></div>
+                                <div class="dash__tabs--food-content">
+                                    <h2 class="dash__tabs--food-heading"><i class="fad fa-cheese"></i> <br> Strawberry
+                                        Cheese Cake</h2>
+                                    <h4 class="dash__tabs--food-status"><span>Categories:</span> Snacks</h4>
+                                    <p class="dash__tabs--food-des"><span>Crabs & Prawns</span> dolor sit amet
+                                        consectetur adipisicing elit. Dolorum, beatae nobis inventore assumenda
+                                        adipisicing elit. Dolorum, beatae nobis inventore</p>
+                                    <div class="dash__tabs--food-btnBox">
+                                        <button data-ripple><i class="fal fa-edit"></i> Edit</button>
+                                        <button data-ripple><i class="fal fa-trash"></i> Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="dash__tabs--food-img dash__tabs--food-img-6"></div>
+                                <div class="dash__tabs--food-content">
+                                    <h2 class="dash__tabs--food-heading"><i class="fad fa-salad"></i> <br> Spiced
+                                        Porridge</h2>
+                                    <h4 class="dash__tabs--food-status"><span>Categories:</span> Porridge</h4>
+                                    <p class="dash__tabs--food-des"><span>Crabs & Prawns</span> dolor sit amet
+                                        consectetur adipisicing elit. Dolorum, beatae nobis inventore assumenda
+                                        adipisicing elit. Dolorum, beatae nobis inventore</p>
+                                    <div class="dash__tabs--food-btnBox">
+                                        <button data-ripple><i class="fal fa-edit"></i> Edit</button>
+                                        <button data-ripple><i class="fal fa-trash"></i> Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-2" class="dash__tabs tabcontent fl">
+                <div class="dash__content">
+                    <h1 class="dash__tabs--headings">Account</h1>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="dash__tabs--boxs" data-ripple>
+                                <h3 class="dash__tabs--boxs-heading">All Earnings</h3>
+                                <p class="dash__tabs--boxs-amount">$ 5,350,000.00</p>
+                                <p class="dash__tabs--boxs-percentage">$ 5,350,000.00 <i class="fal fa-arrow-up"></i>
+                                </p>
+                                <i class="fad fa-usd-circle dash__tabs--boxs-icons dash__tabs--boxs-icons-1"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <a href="#transcation2">
+                                <div class="dash__tabs--boxs dash__tabs--boxs-1" data-ripple>
+                                    <h3 class="dash__tabs--boxs-heading">Invoices pending</h3>
+                                    <p class="dash__tabs--boxs-amount">$ 5,350,000.00</p>
+                                    <p class="dash__tabs--boxs-percentage">$ 5,350,000.00 <i
+                                            class="fal fa-arrow-up"></i>
+                                    </p>
+                                    <i class="fad fa-inbox dash__tabs--boxs-icons dash__tabs--boxs-icons-1"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="dash__tabs--boxs dash__tabs--boxs-4" data-ripple>
+                                <h3 class="dash__tabs--boxs-heading">E-Wallet</h3>
+                                <p class="dash__tabs--boxs-amount">$ 10,000,000.00</p>
+                                <p class="dash__tabs--boxs-percentage">In progress</p>
+                                <i class="fad fa-wallet dash__tabs--boxs-icons dash__tabs--boxs-icons-2"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="dash__tabs--boxs dash__tabs--boxs-3" data-ripple
+                                onclick="UIController.foodTab()">
+                                <h3 class="dash__tabs--boxs-heading">My orders</h3>
+                                <p class="dash__tabs--boxs-amount">3 Orders</p>
+                                <p class="dash__tabs--boxs-percentage">5 Delivered</p>
+                                <i class="fad fa-utensils dash__tabs--boxs-icons dash__tabs--boxs-icons-2"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive" id="transcation2">
+                        <h1 class="dash__tabs--headings">Your Transcations</h1>
+                        <table class="table table-bordered">
+                            <form action="#" method="get">
+                                <input type="text" placeholder="Search" class="form-control">
+                            </form>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Price <b>$</b></th>
+                                    <th>Transcations</th>
+                                    <th>Email Address</th>
+                                    <th>Date of Order</th>
+                                    <th>Date of Delivery</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>0</td>
+                                    <td>John</td>
+                                    <td>$300</td>
+                                    <td>Pending...</td>
+                                    <td>john@example.com</td>
+                                    <td>10/05/2020</td>
+                                    <td>12/05/2020</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Mary</td>
+                                    <td>$200</td>
+                                    <td>Completed</td>
+                                    <td>mary@example.com</td>
+                                    <td>10/05/2020</td>
+                                    <td>12/05/2020</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>James Anderson</td>
+                                    <td>$300</td>
+                                    <td>Completed</td>
+                                    <td>Anderson@example.com</td>
+                                    <td>10/05/2020</td>
+                                    <td>12/05/2020</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>John</td>
+                                    <td>$150</td>
+                                    <td>Pending...</td>
+                                    <td>john@example.com</td>
+                                    <td>10/05/2020</td>
+                                    <td>12/05/2020</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Mary</td>
+                                    <td>$100</td>
+                                    <td>Completed</td>
+                                    <td>mary@example.com</td>
+                                    <td>10/05/2020</td>
+                                    <td>12/05/2020</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>James Anderson</td>
+                                    <td>$300</td>
+                                    <td>Completed</td>
+                                    <td>Anderson@example.com</td>
+                                    <td>10/05/2020</td>
+                                    <td>12/05/2020</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Price <b>$</b></th>
+                                    <th>Transcations</th>
+                                    <th>Email Address</th>
+                                    <th>Date of Order</th>
+                                    <th>Date of Delivery</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="tab-3" class="dash__tabs tabcontent fl">
+                <div class="dash__content">
+                    <h1 class="dash__tabs--headings">Edit Profile</h1>
+                    <div class="dash__tabs--profileBox">
+                        <div class="dash__tabs--profile">
+                            <img src="assets/img/user.png" alt="profile-bg" />
+                            <i class="fad fa-edit" data-ripple></i>
+                        </div>
+                        <h2 class="dash__tabs--name"><i class="fad fa-hat-chef"></i> Paul Emas</h2>
+                        <h3 class="dash__tabs--position"><span>Position:</span> Chef</h3>
+                    </div>
+                    <form action="#" method="get">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label class="dash__tabs--labels">Firstname</label>
+                                <input type="text" value="Firstname" class="dash__tabs--inputs">
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="dash__tabs--labels">Lastname</label>
+                                <input type="text" value="Lastname" class="dash__tabs--inputs">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label class="dash__tabs--labels">Phone number</label>
+                                <input type="number" value="000000000" class="dash__tabs--inputs">
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="dash__tabs--labels">Email Address</label>
+                                <input type="email" value="emaspaul@gmail.com" class="dash__tabs--inputs">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label class="dash__tabs--labels">Date of Birth</label>
+                                <input type="date" max="2022-01-01" class="dash__tabs--inputs">
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="dash__tabs--labels">Name of Resturant</label>
+                                <input type="text" value="ChefRunTown Resturants L.T.D" class="dash__tabs--inputs">
+                            </div>
+
+                            <div class="col-lg-6">
+                                <label class="dash__tabs--labels">Address (Personal)</label>
+                                <input type="text" value="1, Anderson Street, Califonia" class="dash__tabs--inputs">
+                            </div>
+                            <div class="col-lg-6">
+                                <label class="dash__tabs--labels">Address of Resturant</label>
+                                <input type="text" value="ChefRunTown Resturants" class="dash__tabs--inputs">
+                            </div>
+                            <input type="submit" value="Save" class="btn btn-primary dash__tabs--btn"
+                                data-ripple></input>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="dash__orders fr">
+            <h1 class="dash__tabs--headings dash__orders--heading">Orders</h1>
+            <div class="dash__orders--box dash__orders--chef">
+                <div class="dash__orders--request">
+                    <div class="dash__tabs-dish--counter">
+                        <span>5</span>
+                    </div>
+                    <h2 class="dash__orders--food-name"><i class="fad fa-hat-chef"></i> Crabs and Fishes <br>
+                        <span>19<sup>th</sup> May 2020</span></h2>
+                    <p class="dash__orders--food-cus">James Anderson</p>
+                    <p class="dash__orders--food-caption">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Deserunt nesciunt vero ullam provident aperiam unde.</p>
+                    <div class="dash__orders--btnbox">
+                        <button data-ripple
+                            class="dash__orders--btn dash__orders--btn-1 dash__orders--btn-acc acceptBtn"><i
+                                class="fal fa-check"></i> Accept</button>
+                        <button data-ripple class="dash__orders--btn dash__orders--btn-1 dash__orders--btn-dec"><i
+                                class="fal fa-times"></i> Decline</button>
+                        <button data-ripple class="dash__orders--btn dash__orders--btn-1 dash__orders--btn-view"><i
+                                class="fal fa-eye"></i></button>
+                    </div>
+                </div>
+
+                <div class="dash__orders--request">
+                    <div class="dash__tabs-dish--counter">
+                        <span>5</span>
+                    </div>
+                    <h2 class="dash__orders--food-name"><i class="fad fa-hat-chef"></i> Crabs and Fishes <br>
+                        <span>19<sup>th</sup> May 2020</span></h2>
+                    <p class="dash__orders--food-cus">James Anderson</p>
+                    <p class="dash__orders--food-caption">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Deserunt nesciunt vero ullam provident aperiam unde.</p>
+                    <div class="dash__orders--btnbox">
+                        <button data-ripple
+                            class="dash__orders--btn dash__orders--btn-1 dash__orders--btn-acc acceptBtn"><i
+                                class="fal fa-check"></i> Accept</button>
+                        <button data-ripple class="dash__orders--btn dash__orders--btn-1 dash__orders--btn-dec"><i
+                                class="fal fa-times"></i> Decline</button>
+                        <button data-ripple class="dash__orders--btn dash__orders--btn-1 dash__orders--btn-view"><i
+                                class="fal fa-eye"></i></button>
+                    </div>
+                </div>
+
+                <div class="dash__orders--request">
+                    <div class="dash__tabs-dish--counter">
+                        <span>5</span>
+                    </div>
+                    <h2 class="dash__orders--food-name"><i class="fad fa-hat-chef"></i> Crabs and Fishes <br>
+                        <span>19<sup>th</sup> May 2020</span></h2>
+                    <p class="dash__orders--food-cus">James Anderson</p>
+                    <p class="dash__orders--food-caption">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Deserunt nesciunt vero ullam provident aperiam unde.</p>
+                    <div class="dash__orders--btnbox">
+                        <button data-ripple
+                            class="dash__orders--btn dash__orders--btn-1 dash__orders--btn-acc acceptBtn"><i
+                                class="fal fa-check"></i> Accept</button>
+                        <button data-ripple class="dash__orders--btn dash__orders--btn-1 dash__orders--btn-dec"><i
+                                class="fal fa-times"></i> Decline</button>
+                        <button data-ripple class="dash__orders--btn dash__orders--btn-1 dash__orders--btn-view"><i
+                                class="fal fa-eye"></i></button>
+                    </div>
+                </div>
+
+                <div class="dash__orders--request">
+                    <div class="dash__tabs-dish--counter">
+                        <span>5</span>
+                    </div>
+                    <h2 class="dash__orders--food-name"><i class="fad fa-hat-chef"></i> Crabs and Fishes <br>
+                        <span>19<sup>th</sup> May 2020</span></h2>
+                    <p class="dash__orders--food-cus">James Anderson</p>
+                    <p class="dash__orders--food-caption">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Deserunt nesciunt vero ullam provident aperiam unde.</p>
+                    <div class="dash__orders--btnbox">
+                        <button data-ripple
+                            class="dash__orders--btn dash__orders--btn-1 dash__orders--btn-acc acceptBtn"><i
+                                class="fal fa-check"></i> Accept</button>
+                        <button data-ripple class="dash__orders--btn dash__orders--btn-1 dash__orders--btn-dec"><i
+                                class="fal fa-times"></i> Decline</button>
+                        <button data-ripple class="dash__orders--btn dash__orders--btn-1 dash__orders--btn-view"><i
+                                class="fal fa-eye"></i></button>
+                    </div>
+                </div>
+
+                <div class="dash__orders--request">
+                    <div class="dash__tabs-dish--counter">
+                        <span>5</span>
+                    </div>
+                    <h2 class="dash__orders--food-name"><i class="fad fa-hat-chef"></i> Crabs and Fishes <br>
+                        <span>19<sup>th</sup> May 2020</span></h2>
+                    <p class="dash__orders--food-cus">James Anderson</p>
+                    <p class="dash__orders--food-caption">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Deserunt nesciunt vero ullam provident aperiam unde.</p>
+                    <div class="dash__orders--btnbox">
+                        <button data-ripple
+                            class="dash__orders--btn dash__orders--btn-1 dash__orders--btn-acc acceptBtn"><i
+                                class="fal fa-check"></i> Accept</button>
+                        <button data-ripple class="dash__orders--btn dash__orders--btn-1 dash__orders--btn-dec"><i
+                                class="fal fa-times"></i> Decline</button>
+                        <button data-ripple class="dash__orders--btn dash__orders--btn-1 dash__orders--btn-view"><i
+                                class="fal fa-eye"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <!-- Source to boostrap scripting file-->
+    <script src="assets/sass/vendours/boostrap/js/bootstrap.js"></script>
+    <!-- Chartjs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <!-- Ripple Effect -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/ripple.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

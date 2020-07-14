@@ -1,0 +1,128 @@
+.dash {
+
+    &__orders {
+        width: 23%;
+        position: fixed;
+        padding-bottom: 2rem;
+        margin: 0 auto;
+        height: 80%;
+        padding: 2rem;
+        overflow-y: visible;
+        border: 2px solid $color-grey-light-1;
+        border-top-left-radius: .5rem;
+        border-bottom-left-radius: .5rem;
+        overflow-x: hidden;
+        transition: all .3s;
+        transition-delay: .4s;
+        right: 0;
+        background-color: $color-grey-light-1;
+
+
+        @include respond(tab-land) {
+            width: 100%;
+            height: 100%;
+            border-radius: none !important;
+            background-color: $color-grey-light-1;
+            top: 6rem;
+            left: 100%;
+        }
+
+        &--box {
+            overflow-y: visible;
+            padding-bottom: 5rem;
+
+            &:first-child {
+                z-index: 2;
+            }
+        }
+
+        &--request {
+            width: 100%;
+            padding: 4rem 2.5rem;
+            margin-bottom: 2rem;
+            margin: 2rem auto;
+            position: relative;
+            border-radius: .5rem;
+            background-color: $color-white;
+            box-shadow: 0 1rem 2rem $color-grey-light-1;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        &--img {
+            height: 17.3rem;
+            margin-bottom: 1.5rem;
+
+            & img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &--food {
+            &-name {
+                font-size: 2rem;
+                color: #2d2d2d;
+                line-height: 1.2;
+
+                & i {
+                    color: #ee6103;
+                }
+
+                & span {
+                    font-size: 1rem;
+                    color: $color-primary;
+                }
+            }
+
+            &-cus {
+                font-size: 1.5rem;
+                text-transform: capitalize;
+            }
+
+            &-caption {
+                font-size: 1.1rem;
+                color: $color-grey-dark;
+                margin: 0 auto;
+            }
+        }
+
+        &--btnbox {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        &--btn {
+            border: none;
+            outline: none !important;
+            border-radius: .5rem;
+            color: $color-white;
+            transition: all .3s;
+
+            &:not(:last-child) {
+                margin-right: .8rem;
+            }
+
+            &:active {
+                transform: scale(.96);
+            }
+
+            &-1 {
+                padding: .7rem 1.5rem;
+            }
+
+            &-acc {
+                background-color: $color-secondary;
+            }
+
+            &-dec {
+                background-color: $color-primary;
+            }
+
+            &-view {
+                background-color: cornflowerblue;
+            }
+        }
+    }
+}

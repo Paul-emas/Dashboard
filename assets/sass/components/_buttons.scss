@@ -1,0 +1,24 @@
+.btn {
+    padding: 1.5rem 2rem !important;    
+    color: $color-white !important;
+    line-height: 1rem !important;        
+    border-radius: .5rem !important;
+    box-shadow: 0 .5rem 1rem $color-grey;        
+    outline: none !important;      
+    font-size: 1.1rem !important;
+    text-transform: uppercase !important;
+    border: none !important;
+
+    &:focus, &:active {
+        border: none !important;
+        box-shadow: 0 .5rem 1rem $color-grey !important;  
+    }
+}
+
+.btn-prim {    
+    background-color: $color-primary !important;
+
+    &:hover {
+        background-color: $color-primary-light !important;
+    }   
+}

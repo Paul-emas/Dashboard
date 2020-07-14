@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+
+body {
+    font-family: 'Poppins', Arial;
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+    text-decoration: none !important;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+button {
+    border: none;
+    outline: none !important;
+}

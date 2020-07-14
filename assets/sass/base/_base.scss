@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    box-sizing: inherit;
+    overflow-x: hidden;
+    background-color: $color-grey-light;
+
+    @include respond(phone) {
+        overflow-x: hidden;
+    }
+}
+
+::-webkit-scrollbar {
+    width: .8rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 2.5rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
